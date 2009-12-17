@@ -1,0 +1,14 @@
+Message:
+  columns:
+    subject:      string(100)
+    body:         clob
+    recipient_id: integer(4)
+  actAs:
+    Timestampable:
+  relations:
+    recipient:
+      class: sfGuardUser
+      local: recipient_id
+      foreign: id
+      foreignAlias: messages
+
